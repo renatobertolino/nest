@@ -1,13 +1,13 @@
-import { Controller, Get, Post, Delete, Put, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Put, Body, Param} from '@nestjs/common';
 import { CategoriesService } from './categories.service';
-import { ICategory } from 'dist/categories/category.interface';
+import { ICategory } from './category.interface';
 
 @Controller('categories')
 export class CategoriesController {
 
     constructor(
-        private readonly categoriesService: CategoriesService 
-    ){}
+        private readonly categoriesService: CategoriesService
+    ){ }
 
     @Get()
     async index() {

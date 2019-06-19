@@ -1,12 +1,14 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import {MongooseModule} from '@nestjs/mongoose';
+import { MongooseModule } from '@nestjs/mongoose';
+import { CategoriesService } from './categories/categories.service';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017/testenest', {useNewUrlParser: true}),
-  
+    MongooseModule.forRoot('mongodb://localhost/testenest', {useNewUrlParser: true}),
+    CategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
